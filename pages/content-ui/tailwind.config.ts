@@ -4,4 +4,5 @@ import { withUI } from '@extension/ui'
 export default withUI({
   ...baseConfig,
   content: ['src/**/*.{vue,js,ts,jsx,tsx}'],
+  prefix: 'tw-'
 })

@@ -8,7 +8,7 @@ type ThemeStorage = BaseStorage<Theme> & {
   toggle: () => Promise<void>;
 };
 
-const storage = createStorage<Theme>('theme-storage-key', 'light', {
+export const storage = createStorage<Theme>('theme-storage-key', 'light', {
   storageEnum: StorageEnum.Local,
   liveUpdate: true,
 });
