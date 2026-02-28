@@ -1,3 +1,67 @@
+# 🚀 Pure App Bot & Assistant
+
+<p align="center">
+  <a href="https://github.com/kostia7alania/pure-app-bot">
+    <img src="https://img.shields.io" alt="Chrome Extension">
+  </a>
+  <a href="https://github.com">
+    <img src="https://img.shields.io" alt="Stars">
+  </a>
+  <a href="https://github.com">
+    <img src="https://img.shields.io" alt="MIT License">
+  </a>
+</p>
+---
+
+## 🌍 Overview / Обзор
+
+**Pure App Bot** — это расширение для браузера Chrome, созданное для улучшения опыта использования [Pure.app](https://pure.app). Оно автоматизирует рутину и решает главную проблему приложения — потерю данных после удаления чатов.
+
+**Pure App Bot** is a Chrome extension designed to enhance your [Pure.app](https://pure.app) experience. It automates tedious tasks and prevents data loss from disappearing chats.
+
+---
+
+## ✨ Features / Возможности
+
+
+| Feature | Description | Описание |
+| :--- | :--- | :--- |
+| ❤️ **Auto-Liker** | Automatically swipes and likes profiles in your feed. | Автоматически ставит лайки профилям в ленте. |
+| 💾 **Chat Backup** | Saves chat history and media before they disappear. | Сохраняет историю чатов и медиа до их удаления. |
+| 👤 **Profile Saver** | Keeps a local copy of profiles you've interacted with. | Сохраняет копии профилей, с которыми вы общались. |
+| 🛡️ **Anti-Ban System** | Human-like delays to avoid detection. | Имитация действий человека для защиты от бана. |
+| 🌑 **Dark Mode** | Optimized UI for comfortable night browsing. | Оптимизированный интерфейс для ночного использования. |
+
+---
+
+## 🛠 Installation / Установка
+
+1. **Download:** Clone this repo `git clone https://github.com` or download ZIP.
+2. **Extensions:** Open `chrome://extensions/` in your Chrome browser.
+3. **Developer Mode:** Enable "Developer mode" in the top right corner.
+4. **Load:** Click "Load unpacked" and select the project folder.
+
+---
+
+## 📈 SEO & Keywords (Target Audience)
+
+**Global Search (EN):** 
+`Pure app bot`, `Pure dating automation`, `Save Pure.app chats`, `Pure auto swiper`, `Pure.app chrome extension`, `Dating bot 2024`.
+
+**Поиск СНГ (RU):** 
+`Автолайкер для Pure`, `Как сохранить чат в Пьюр`, `Бот для знакомств Pure`, `Скрипт для Pure.app`, `Бэкап переписки Pure`.
+
+---
+
+## ⚠️ Disclaimer
+*This project is for educational purposes only. Use it at your own risk. The developer is not responsible for any account bans or data loss. Not affiliated with Pure.app.*
+
+---
+<p align="center">
+  Made with ❤️ for the community. Star this repo if it helped you!
+</p>
+
+
 <div align="center">
 
 <picture>
