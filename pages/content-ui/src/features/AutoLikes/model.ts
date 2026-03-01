@@ -2,36 +2,64 @@ import { selectors } from "./config";
 import { getWait } from "@utils/getWait";
 import { getOptionsSimulateTrustedClick } from "./lib";
 
-export const run = async () => {
-  let getLikeButton = () => document.querySelectorAll(selectors.likeButton);
+export const useAutoLikes = () => {
+  let likes = ref(0);
+  let isStarted = ref(false);
 
-  let l = 0;
+  const runLikingCallback = async () => {
+    let getLikeButton = () => document.querySelectorAll(selectors.likeButton);
 
-  for (; getLikeButton().length; ) {
-    let likeButton = getLikeButton()[0].closest("button");
+    for (; getLikeButton().length; ) {
+      if (!isStarted.value) return console.warn("[STOP] exited by !isStarted");
 
-    if (!likeButton) continue;
+      let likeButton = getLikeButton()[0].closest("button");
 
-    likeButton?.scrollIntoView({ behavior: "smooth" });
+      if (!likeButton) {
+        console.log('!likeButton')
+        continue 
+      }
+
+      likeButton?.scrollIntoView({ behavior: "smooth" });
+
+      await getWait(1000, 2e3);
+
+      const optionsSimulateTrustedClick =
+        getOptionsSimulateTrustedClick(likeButton);
+
+      console.log("optionsSimulateTrustedClick", optionsSimulateTrustedClick);
+
+      const res = await chrome.runtime.sendMessage({
+        type: "sex",
+        optionsSimulateTrustedClick,
+      });
+
+      console.log("res ->", res);
+
+      likes.value += 1;
+      console.log(
+        `[${new Date().toLocaleTimeString()}] поставили лайк -> ${likes.value}`,
+      );
+    }
+
+    document.querySelector(selectors.lastCard)?.scrollIntoView();
 
     await getWait(1000, 2e3);
+    runLikingCallback();
+  };
 
-    const optionsSimulateTrustedClick =
-      getOptionsSimulateTrustedClick(likeButton);
+  const runLiking = () => {
+    isStarted.value = true;
+    runLikingCallback();
+  };
 
-    console.log("before+++", optionsSimulateTrustedClick);
-    const res = await chrome.runtime.sendMessage({
-      type: "sex",
-      optionsSimulateTrustedClick,
-    });
+  const stopLiking = () => {
+    isStarted.value = false;
+  };
 
-    console.log("after+++", res);
-
-    console.log(`[${new Date().toLocaleTimeString()}] поставили лайк ${++l}`);
-  }
-
-  document.querySelector(selectors.lastCard)?.scrollIntoView();
-
-  await getWait(1000, 2e3);
-  run();
+  return {
+    likes,
+    isStarted,
+    runLiking,
+    stopLiking,
+  };
 };
